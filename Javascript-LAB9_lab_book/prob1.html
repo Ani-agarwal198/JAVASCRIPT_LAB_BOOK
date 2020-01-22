@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <script>
+                function demoMatchClick(){
+                    var regexp = new RegExp(document.getElementById('regexp').value);
+                    var string = document.getElementById('string').value;
+                    if(string.match(regexp))
+                        alert('Successful match');
+                    else
+                        alert('Not a Successful match');
+                }
+                
+                function demoShowMatchClick(){
+                    var regexp = new RegExp(document.getElementById('regexp').value);
+                    var string = document.getElementById('string').value;
+                    var position = string.search(regexp);
+                    alert('Match at position '+position+': test');
+                }
+
+
+        </script>
+    </head>
+
+    <body>
+        <form>
+            <div>Regexp: <input type="text" id="regexp"></div><br/>
+            <div>Subject string: <input type="text" id="string"></div><br/>
+            <span><input type="button" id="testMatch" value="Test Match" onclick="demoMatchClick();"></span>
+            <span><input type="button" id="showMatch" value="Show Match" onclick="demoShowMatchClick();"></span>
+        </form>
+    </body>
+</html>

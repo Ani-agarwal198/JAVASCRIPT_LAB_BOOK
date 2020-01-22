@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title> window example </title>
+    </head>
+    <script>
+        var newWindow;
+        function nwindow(){
+            newWindow = open("","","toolbar=no, status=no, width=10,height=10");
+            newWindow.document.writeln("<html><body>This window is opened on clicking of the New Window button</body></html>")
+            if((window.newWindow) && (newWindow.closed == false))
+                newWindow.resizeTo(document.frmlab.resizeX.value,document.frmlab.resizeY.value);
+            newWindow.moveTo(document.frmlab.moveX.value, document.frmlab.moveY.value);
+        }
+    </script>
+    <body >
+        <form id="frmlab" name="frmlab">
+            <table border="1" cellspacing="8" cellpadding="10" bordercolor="blue">
+                <tr>
+                    <td colspan="4"><center><b>Create A New Window</b></center></td>
+                </tr>
+                <tr>
+                    <td colspan="4"><center>Window Size</center></td>
+                </tr>
+                <tr>
+                    <td>Width:</td>
+                    <td><input type="text" size="4" name="resizeX" id="resizeX"></td>
+                    <td>Height:</td>
+                    <td><input type="text" size="4" name="resizeY" id="resizeY"></td>
+                </tr>
+                <tr>
+                    <td colspan="4"><center>Position</center></td>
+                </tr>
+                <tr>
+                    <td>Left:</td>
+                    <td><input type="text" size="4" name="moveX" id="moveX"></td>
+                    <td>Top:</td>
+                    <td><input type="text" size="4" name="moveY" id="moveY"></td>
+                </tr>
+                <tr>
+                    <td colspan="3"><center><input type="button" size="10" value="New Window" onclick="nwindow();"></center></td>
+                    <td><center><input type="reset" value="reset"></center></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
