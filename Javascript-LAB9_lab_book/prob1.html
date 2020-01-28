@@ -1,3 +1,4 @@
+  
 <html>
     <head>
         <script>
@@ -14,7 +15,8 @@
                     var regexp = new RegExp(document.getElementById('regexp').value);
                     var string = document.getElementById('string').value;
                     var position = string.search(regexp);
-                    alert('Match at position '+position+': test');
+					var strr = string.match(regexp); 
+                    alert('Match at position '+position+': ' + strr);
                 }
 
 
